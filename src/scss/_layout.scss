@@ -1,0 +1,15 @@
+.l--center {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  padding: 0 1rem;
+  margin: 5rem auto;
+  max-width: 40rem;
+
+  @media (min-width: 50rem) {
+    .l--center {
+      padding: 0;
+    }
+  }
+}

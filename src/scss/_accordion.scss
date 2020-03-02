@@ -1,0 +1,66 @@
+.accordion {
+	max-width: 40rem;
+	margin: auto;
+
+	&__button {
+		text-align: left;
+		font-size: 1rem;
+		font-family: 'Poppins', sans-serif;
+		font-weight: 500;
+		background-color: $theme-primary;
+		color: #fff;
+		border: none;
+		padding: 0.5rem 1rem;
+		border-radius: 0.25rem;
+		display: block;
+		width: 100%;
+		z-index: 1; // add z-index so focus is always visible
+		position: relative;
+		margin-top: 1rem;
+		transition: all 150ms linear;
+		
+		&::after {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			right: 0.875rem;
+			top: 0.875rem;
+			width: 0.4rem;
+			height: 0.4rem;
+			border-right: 0.25rem solid #fff;
+			border-top: 0.25rem solid #fff;
+			transform: rotate(135deg);
+			transition: transform 250ms linear;
+		}
+		
+		&:hover {
+			background-color: $theme-secondary;
+			transform: scale(1.025);
+		}
+		
+		&[aria-expanded='true'] {
+			background-color: $theme-secondary;
+		}
+		
+		&[aria-expanded='true']::after {
+			transform: rotate(315deg) translateY(0.25rem);
+		}
+	}
+	
+	&__content {
+		padding: 0.875rem;
+		margin-left: 0;
+		background-color: #fff;
+		border: 2px solid #eee;
+		box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.15);
+		transition: all 200ms linear;
+		
+		&[aria-hidden='false'] {
+			display: block;
+		}
+		
+		&[aria-hidden='true'] {
+			display: none;
+		}
+	}
+}

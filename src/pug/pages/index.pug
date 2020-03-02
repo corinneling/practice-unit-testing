@@ -1,0 +1,52 @@
+extends ../layout
+
+block variables
+  - let title = 'Accordion';
+  - let description = '';
+  - let pageClass = 'theme-showcase';
+  - let mainClass = 'showcase';
+
+block content
+  .block.block--upper
+    .heading-wrapper
+      h1.reveal-text Accordion
+  section.component-wrapper
+    dl.accordion
+      dt
+        button(aria-expanded="true" aria-controls="accordion-resources").accordion__button What resources did you use to build this?
+      dd(aria-hidden="false").accordion__content#accordion-resources
+        ul
+          li
+            a(href="https://www.w3.org/TR/wai-aria-practices/#disclosure") Disclosure (FAQ) Design Pattern
+          li
+            a(href="https://www.w3.org/TR/wai-aria-practices/examples/disclosure/disclosure-faq.html") Disclosure (FAQ) Example
+          li
+            a(href="https://www.w3.org/TR/wai-aria-practices/#accordion") Accordion Design Pattern
+          li
+            a(href="https://www.w3.org/TR/wai-aria-practices/examples/accordion/accordion.html") Accordion Example
+      dt
+        button(aria-expanded="true" aria-controls="accordion-markup").accordion__button What are the HTML tags and ARIA attributes used?
+      dd(aria-hidden="false").accordion__content#accordion-markup
+        ul
+          li
+            a(href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section") section
+          li
+            a(href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button") button
+          li
+            a(href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl") dl
+          li
+            a(href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt") dt
+          li
+            a(href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd") dd
+          li
+            a(href="https://www.w3.org/TR/wai-aria-1.1/#aria-expanded") aria-expanded
+          li
+            a(href="https://www.w3.org/TR/wai-aria-1.1/#aria-controls") aria-controls
+      dt
+        button(aria-expanded="true" aria-controls="accordion-behavior").accordion__button What is the expected behavior of this component?
+      dd(aria-hidden="false").accordion__content#accordion-behavior
+        ul
+          li Users can tab to an accordion button which will show focus that button
+          li When using a keyboard and the NVDA screen reader users can hit Enter or Space to toggle the content for the focused accordion button
+          li When using the VO screen reader users can navigate to the button with Control + Option + Space
+          li Then when focused on the button, VO users can toggle the content with Control + Option + Space
