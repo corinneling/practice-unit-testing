@@ -11,8 +11,10 @@ function toggleContent(e) {
 
 function toggleButton(button) {
 	const expandedValue = button.getAttribute('aria-expanded');
-	const setValue = expandedValue === 'true' ? 'false' : 'true';
-	button.setAttribute('aria-expanded', setValue);
+	if (expandedValue) {
+		const setValue = expandedValue === 'true' ? 'false' : 'true';
+		button.setAttribute('aria-expanded', setValue);
+	}
 }
 
 function toggleDetails(button) {

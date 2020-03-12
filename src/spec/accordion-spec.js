@@ -36,11 +36,11 @@ describe('Accordion', () => {
     expect(taterTotAria).to.equal('false');
   })
 
-  it('does something', () => {
+  it('does not set aria-expanded if the attribute wasnt on the element to begin with', () => {
     const potato = document.querySelector('.potato');
     toggleButton(potato);
 
-    expect(potato.getAttribute('aria-expanded')).to.equal('true');
+    expect(potato.getAttribute('aria-expanded')).to.equal(null);
   })
 
   it('set aria-hidden of content to true, when initially set to false', () => {
